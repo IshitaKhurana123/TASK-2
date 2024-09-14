@@ -1,0 +1,46 @@
+import java.util.*;
+ class student
+{
+    String name;
+    float total,avg,gpa;
+   float marks[]=new float[5];
+    void input()
+    {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the name of student");
+    name = sc.nextLine();
+    }
+    void markssub()
+    {
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter marks of the student");
+    for(int i=0;i<5;i++)
+    {
+    marks[i] = sc.nextFloat();
+}
+}
+void calculate()
+{
+    total=0;
+    for(int i=0;i<5;i++)
+    {
+    total=total+marks[i];
+    }
+    avg=total/5;
+     gpa= (float)((avg/100)* 9.5);
+}
+void display()
+{
+    System.out.println("name  "+name);
+    System.out.println("average  "+avg);
+    System.out.println("cgpa  "+gpa);
+}
+public static void main(String[] args)
+{
+    student ob=new student();
+    ob.input();
+    ob.markssub();
+    ob.calculate();
+    ob.display();
+}
+}
